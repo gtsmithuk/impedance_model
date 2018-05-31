@@ -7,6 +7,7 @@ current = 1     #A cm-2
 RH = 80         #%
 
 #cell constants
+cell_area = 1   #cm2
 E0 = 0          #Hydrogen on both sides, E0 for both sides 
 n = 2           #Electrons 
 
@@ -15,3 +16,9 @@ mem_thickickness = 50 #cm
 
 #fundamental constants
 F = 96485       #C mol-1
+
+#variable constants
+
+
+#membrane resistance
+mem_sigma = 0.040 # Ohm cm-2
