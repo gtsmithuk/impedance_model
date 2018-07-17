@@ -1,6 +1,6 @@
 import numpy as np
 import math
-import params
+import params as pms
 import plotting as plt
 import dc_elements as dc
 import ac_elements as ac
@@ -41,7 +41,7 @@ def simulate_pol_curve():
     eta_cathode = dc.eta_cathode(current)
 
     #calculate cell voltage
-    voltage = voltage_equlib + eta_membrane + eta_anode + eta_cathode 
+    voltage = eta_anode #voltage_equlib + eta_membrane + eta_anode + eta_cathode 
 
     return current, voltage
 
@@ -50,8 +50,9 @@ def simulate_pol_curve():
 freqs, phase, magnatude, Z_real, Z_img = simulate_impedance()
 current, voltage = simulate_pol_curve()
 
+print(pms.anode_sa)
 
 #plotting
-plt.bode(freqs, phase, magnatude)
-plt.niquist(Z_real, Z_img)
+#plt.bode(freqs, phase, magnatude)
+#plt.niquist(Z_real, Z_img)
 plt.dc_plot(current, voltage)
