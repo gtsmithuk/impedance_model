@@ -24,7 +24,7 @@ def simulate_impedance():
     #calculating Z_real and Z_img
     Z_real = np.ones(80)
     Z_img = np.ones(80)
-    
+
     return freqs, phase, magnatude, Z_real, Z_img
 
 def simulate_pol_curve():
