@@ -25,7 +25,23 @@ def simulate_impedance():
     Z_real = np.ones(80)
     Z_img = np.ones(80)
 
-    return freqs, phase, magnatude, Z_real, Z_img
+    plot.bode(freqs, phase, magnatude)
+    plot.niquist(Z_real, Z_img)
+
+    return 0
+
+def simulate_lissajous():
+    frequency = 100   #Hz
+    amplitude = 0.05    #A cm-2
+    no_cycles = 5       #cycles to show in plot
+    time = np.linspace(0, no_cycles/frequency, 1000)
+    current = amplitude*np.sin(time*frequency*2*math.pi) #functions operates in radians
+
+    circuit_1 = ac.resistor(0.1) #instantate cell
+    voltage = circuit_1.dc(current) #find voltage
+
+    plot.sino(time, current, voltage)
+    plot.lissajous(current, voltage)
 
 def simulate_pol_curve():
 
@@ -43,14 +59,11 @@ def simulate_pol_curve():
     #calculate cell voltage
     voltage =   eta_anode + eta_cathode + voltage_equlib + eta_membrane
 
-    return current, voltage
+    plot.dc_plot(current, voltage)
+    return 0
 
-#calculating
-freqs, phase, magnatude, Z_real, Z_img = simulate_impedance()
-current, voltage = simulate_pol_curve()
+#calling functions
 
-#plotting
-#plot.bode(freqs, phase, magnatude)
-#plot.niquist(Z_real, Z_img)
-
-plot.dc_plot(current, voltage)
+#simulate_pol_curve()
+simulate_lissajous()
+#simulate_impedance()

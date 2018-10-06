@@ -57,3 +57,30 @@ def tafel(current, voltage):
     plt.show()
     plt.close()
     return 0
+
+def sino(time, current, voltage):
+
+    fig, ax1 = plt.subplots()
+    color = 'red'
+    ax1.set_xlabel('Time / s')
+    ax1.set_ylabel('Current / A cm$^{2}$', color=color)
+    ax1.tick_params(axis='y', labelcolor=color)
+    ax1.plot(time, current/pms.cell_area, color=color, label='Current')
+    
+    ax2 = ax1.twinx()
+    color = 'blue'
+    ax2.set_ylabel('Potential / mV', color = color)
+    ax2.tick_params(axis='y', labelcolor=color)
+    ax2.plot(time, voltage*1000, color=color, label = 'Voltage')
+    plt.show()
+    plt.close()
+    return 0
+
+def lissajous(current, voltage):
+
+    plt.plot(current,voltage, '-')
+    plt.xlabel('Current / A cm$^{2}$')
+    plt.ylabel('Potential / mV')
+    plt.show()
+    plt.close()
+    return 0
