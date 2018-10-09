@@ -58,6 +58,7 @@ def tafel(current, voltage):
     plt.close()
     return 0
 
+#time
 def sino(time, current, voltage):
 
     fig, ax1 = plt.subplots()
@@ -76,11 +77,19 @@ def sino(time, current, voltage):
     plt.close()
     return 0
 
-def lissajous(current, voltage):
+# lissajous plot
+def lissajous():
 
-    plt.plot(current,voltage, '-')
+    current = {}
+    voltage = {}
+    frequency = {}
+    
+    for i in :
+        plt.plot(current, voltage, '-', label=frequency)
+
     plt.xlabel('Current / A cm$^{2}$')
     plt.ylabel('Potential / mV')
+    plt.legend()
     plt.show()
     plt.close()
     return 0
