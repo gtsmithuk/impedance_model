@@ -18,14 +18,14 @@ def eta_ir(current):
 def eta_anode(current):
     j = current/pms.electrode_sa #specific current density
     b =  2 * pms.R * pms.T / pms.n / pms.F
-    voltage = np.arcsinh(j/2/pms.i0) * b
+    voltage = np.arcsinh(j/2/pms.j0) * b
     return voltage
 
 #calculate ir loss from cathode overpotential
 def eta_cathode(current):
     j = current/pms.electrode_sa #specific current density
     b =  2 * pms.R * pms.T / pms.n / pms.F
-    voltage = np.arcsinh(j/2/pms.i0) * b
+    voltage = np.arcsinh(j/2/pms.j0) * b
     return voltage
 
 #calculate polarisation loss
