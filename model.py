@@ -64,6 +64,6 @@ def simulate_pol_curve():
 
 #calling functions
 
-#simulate_pol_curve()
-simulate_lissajous()
+simulate_pol_curve()
+#simulate_lissajous()
 #simulate_impedance()

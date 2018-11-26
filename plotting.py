@@ -78,14 +78,14 @@ def sino(time, current, voltage):
     return 0
 
 # lissajous plot
-def lissajous():
+#def lissajous():
 
-    current = {}
-    voltage = {}
-    frequency = {}
+#    current = {}
+#    voltage = {}
+#    frequency = {}
     
-    for i in :
-        plt.plot(current, voltage, '-', label=frequency)
+#    for i in :
+#        plt.plot(current, voltage, '-', label=frequency)
 
     plt.xlabel('Current / A cm$^{2}$')
     plt.ylabel('Potential / mV')
