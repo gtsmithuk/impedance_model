@@ -84,8 +84,7 @@ def lissajous():
     voltage = {}
     frequency = {}
     
-    for i in :
-        plt.plot(current, voltage, '-', label=frequency)
+    plt.plot(current, voltage, '-', label=frequency)
 
     plt.xlabel('Current / A cm$^{2}$')
     plt.ylabel('Potential / mV')

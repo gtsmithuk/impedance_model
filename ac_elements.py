@@ -19,8 +19,7 @@ class capacitor:
         self.capacitance = capacitance
     
     def dc(self, current):
-        voltage = current * self.capacitance
-        return voltage
+        return 0
 
 #inductor
 class inductor:
